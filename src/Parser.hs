@@ -3,8 +3,8 @@ module Parser where
 import Lexer
 import Data.Bifunctor
 
-data Expr = Expr Int ERem deriving Show
-data ERem = ERem E' | Eps deriving Show
+data Expr = Expr Int ERem         deriving Show
+data ERem = ERem E' | Eps         deriving Show
 data E'   = E' Int ERem Char ERem deriving Show
 
 parseExpr :: [Token] -> Maybe (Expr, [Token])

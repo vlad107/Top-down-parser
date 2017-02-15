@@ -8,8 +8,13 @@ tokenizeAll :: [String] -> [Token]
 tokenizeAll = map tokenize
 
 tokenize :: String -> Token
-tokenize str | isOperand str = Operand (str !! 0) -- good style detected
-			 | otherwise 	 = Number (read str) -- yet another stylish line
-			
-isOperand :: String -> Bool
-isOperand str = elem (str !! 0) "+-*/"
+tokenize str 
+	| Just op <- toOperand str = Operand op
+	| otherwise 			   = Number (read str)
+
+toOperand :: String -> Maybe Char
+toOperand [] = Nothing
+toOperand (x:_) 
+	| x `elem` "+-*/" = Just x
+	| otherwise 	  = Nothing
+

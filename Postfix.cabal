@@ -26,7 +26,7 @@ executable Postfix-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N -fno-warn-tabs
-  build-depends:       base
+  build-depends:       base, text
                      , Postfix
   default-language:    Haskell2010
 

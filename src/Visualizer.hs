@@ -44,9 +44,6 @@ import Data.GraphViz.Attributes.Complete (
   focus
   )
 
-gnomes :: Gr Text Text
-gnomes = mkGraph [(1, pack "Collect underpants"), (3, pack "Profit")] [(1, 3, pack "?")]
-
 gnomeParams :: GraphvizParams n Text Text () Text
 gnomeParams = nonClusteredParams {
   globalAttributes = ga,

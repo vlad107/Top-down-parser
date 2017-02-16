@@ -1,6 +1,5 @@
 module Main where
 
-import Lib
 import Visualizer
 import System.Environment (getArgs)
 import Lexer
